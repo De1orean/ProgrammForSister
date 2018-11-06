@@ -33,21 +33,22 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.questPanel = new System.Windows.Forms.TabControl();
             this.startPage = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.deleteList = new System.Windows.Forms.Button();
             this.addList = new System.Windows.Forms.Button();
             this.listCollectionsControl = new System.Windows.Forms.ListBox();
             this.startButton = new System.Windows.Forms.Button();
             this.questPage = new System.Windows.Forms.TabPage();
             this.addingPage = new System.Windows.Forms.TabPage();
-            this.wordListBox = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listNameBox = new System.Windows.Forms.TextBox();
-            this.addedRusWord = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.addedEngWord = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.addWordButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.addedEngWord = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.addedRusWord = new System.Windows.Forms.TextBox();
+            this.listNameBox = new System.Windows.Forms.TextBox();
+            this.addListOfWordsButton = new System.Windows.Forms.Button();
+            this.wordListBox = new System.Windows.Forms.ListBox();
+            this.backToStartPageButton = new System.Windows.Forms.Button();
             this.questPanel.SuspendLayout();
             this.startPage.SuspendLayout();
             this.questPage.SuspendLayout();
@@ -115,7 +116,7 @@
             // 
             // startPage
             // 
-            this.startPage.Controls.Add(this.button2);
+            this.startPage.Controls.Add(this.deleteList);
             this.startPage.Controls.Add(this.addList);
             this.startPage.Controls.Add(this.listCollectionsControl);
             this.startPage.Controls.Add(this.startButton);
@@ -127,14 +128,15 @@
             this.startPage.Text = "7";
             this.startPage.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // deleteList
             // 
-            this.button2.Location = new System.Drawing.Point(289, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.deleteList.Location = new System.Drawing.Point(289, 256);
+            this.deleteList.Name = "deleteList";
+            this.deleteList.Size = new System.Drawing.Size(75, 23);
+            this.deleteList.TabIndex = 3;
+            this.deleteList.Text = "Delete";
+            this.deleteList.UseVisualStyleBackColor = true;
+            this.deleteList.Click += new System.EventHandler(this.deleteList_Click);
             // 
             // addList
             // 
@@ -180,6 +182,7 @@
             // 
             // addingPage
             // 
+            this.addingPage.Controls.Add(this.backToStartPageButton);
             this.addingPage.Controls.Add(this.addWordButton);
             this.addingPage.Controls.Add(this.label4);
             this.addingPage.Controls.Add(this.addedEngWord);
@@ -187,7 +190,7 @@
             this.addingPage.Controls.Add(this.label2);
             this.addingPage.Controls.Add(this.addedRusWord);
             this.addingPage.Controls.Add(this.listNameBox);
-            this.addingPage.Controls.Add(this.button1);
+            this.addingPage.Controls.Add(this.addListOfWordsButton);
             this.addingPage.Controls.Add(this.wordListBox);
             this.addingPage.Location = new System.Drawing.Point(4, 27);
             this.addingPage.Name = "addingPage";
@@ -195,73 +198,6 @@
             this.addingPage.TabIndex = 3;
             this.addingPage.Text = "tabPage1";
             this.addingPage.UseVisualStyleBackColor = true;
-            // 
-            // wordListBox
-            // 
-            this.wordListBox.FormattingEnabled = true;
-            this.wordListBox.ItemHeight = 18;
-            this.wordListBox.Location = new System.Drawing.Point(17, 35);
-            this.wordListBox.Name = "wordListBox";
-            this.wordListBox.Size = new System.Drawing.Size(175, 256);
-            this.wordListBox.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(396, 251);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listNameBox
-            // 
-            this.listNameBox.Location = new System.Drawing.Point(243, 64);
-            this.listNameBox.Name = "listNameBox";
-            this.listNameBox.Size = new System.Drawing.Size(133, 24);
-            this.listNameBox.TabIndex = 2;
-            // 
-            // addedRusWord
-            // 
-            this.addedRusWord.Location = new System.Drawing.Point(243, 94);
-            this.addedRusWord.Name = "addedRusWord";
-            this.addedRusWord.Size = new System.Drawing.Size(133, 24);
-            this.addedRusWord.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(406, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Имя списка";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(406, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 18);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Слово на русском";
-            // 
-            // addedEngWord
-            // 
-            this.addedEngWord.Location = new System.Drawing.Point(243, 124);
-            this.addedEngWord.Name = "addedEngWord";
-            this.addedEngWord.Size = new System.Drawing.Size(133, 24);
-            this.addedEngWord.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(406, 127);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Слово на англецком";
             // 
             // addWordButton
             // 
@@ -272,6 +208,83 @@
             this.addWordButton.Text = "Добавить Слово";
             this.addWordButton.UseVisualStyleBackColor = true;
             this.addWordButton.Click += new System.EventHandler(this.addWordButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(406, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 18);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Слово на англецком";
+            // 
+            // addedEngWord
+            // 
+            this.addedEngWord.Location = new System.Drawing.Point(243, 124);
+            this.addedEngWord.Name = "addedEngWord";
+            this.addedEngWord.Size = new System.Drawing.Size(133, 24);
+            this.addedEngWord.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(406, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 18);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Слово на русском";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(406, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Имя списка";
+            // 
+            // addedRusWord
+            // 
+            this.addedRusWord.Location = new System.Drawing.Point(243, 94);
+            this.addedRusWord.Name = "addedRusWord";
+            this.addedRusWord.Size = new System.Drawing.Size(133, 24);
+            this.addedRusWord.TabIndex = 3;
+            // 
+            // listNameBox
+            // 
+            this.listNameBox.Location = new System.Drawing.Point(243, 64);
+            this.listNameBox.Name = "listNameBox";
+            this.listNameBox.Size = new System.Drawing.Size(133, 24);
+            this.listNameBox.TabIndex = 2;
+            // 
+            // addListOfWordsButton
+            // 
+            this.addListOfWordsButton.Location = new System.Drawing.Point(396, 251);
+            this.addListOfWordsButton.Name = "addListOfWordsButton";
+            this.addListOfWordsButton.Size = new System.Drawing.Size(75, 23);
+            this.addListOfWordsButton.TabIndex = 1;
+            this.addListOfWordsButton.Text = "button1";
+            this.addListOfWordsButton.UseVisualStyleBackColor = true;
+            this.addListOfWordsButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // wordListBox
+            // 
+            this.wordListBox.FormattingEnabled = true;
+            this.wordListBox.ItemHeight = 18;
+            this.wordListBox.Location = new System.Drawing.Point(17, 35);
+            this.wordListBox.Name = "wordListBox";
+            this.wordListBox.Size = new System.Drawing.Size(175, 256);
+            this.wordListBox.TabIndex = 0;
+            // 
+            // backToStartPageButton
+            // 
+            this.backToStartPageButton.Location = new System.Drawing.Point(286, 251);
+            this.backToStartPageButton.Name = "backToStartPageButton";
+            this.backToStartPageButton.Size = new System.Drawing.Size(75, 23);
+            this.backToStartPageButton.TabIndex = 9;
+            this.backToStartPageButton.Text = "button3";
+            this.backToStartPageButton.UseVisualStyleBackColor = true;
+            this.backToStartPageButton.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -304,11 +317,11 @@
         private System.Windows.Forms.TabPage startPage;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.ListBox listCollectionsControl;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button deleteList;
         private System.Windows.Forms.Button addList;
         private System.Windows.Forms.TabPage addingPage;
         private System.Windows.Forms.ListBox wordListBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addListOfWordsButton;
         private System.Windows.Forms.TextBox addedRusWord;
         private System.Windows.Forms.TextBox listNameBox;
         private System.Windows.Forms.Label label3;
@@ -316,6 +329,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox addedEngWord;
         private System.Windows.Forms.Button addWordButton;
+        private System.Windows.Forms.Button backToStartPageButton;
     }
 }
 

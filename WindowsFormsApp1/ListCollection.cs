@@ -9,6 +9,7 @@ namespace WindowsFormsApp1
     [Serializable]
     class ListCollection
     {
+        [Serializable]
         public struct listOfWord
         {
             public List<string> engWords;
