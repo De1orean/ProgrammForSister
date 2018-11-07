@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.questWord = new System.Windows.Forms.Label();
+            this.questTextBox = new System.Windows.Forms.TextBox();
             this.nextButton = new System.Windows.Forms.Button();
             this.questPanel = new System.Windows.Forms.TabControl();
             this.startPage = new System.Windows.Forms.TabPage();
@@ -39,6 +39,7 @@
             this.startButton = new System.Windows.Forms.Button();
             this.questPage = new System.Windows.Forms.TabPage();
             this.addingPage = new System.Windows.Forms.TabPage();
+            this.backToStartPageButton = new System.Windows.Forms.Button();
             this.addWordButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.addedEngWord = new System.Windows.Forms.TextBox();
@@ -48,37 +49,44 @@
             this.listNameBox = new System.Windows.Forms.TextBox();
             this.addListOfWordsButton = new System.Windows.Forms.Button();
             this.wordListBox = new System.Windows.Forms.ListBox();
-            this.backToStartPageButton = new System.Windows.Forms.Button();
+            this.changeButton = new System.Windows.Forms.Button();
+            this.changingPage = new System.Windows.Forms.TabPage();
+            this.changingWordListBox = new System.Windows.Forms.ListBox();
+            this.addWordChangedButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.addedRusWordChanged = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.addedEngWordChanged = new System.Windows.Forms.TextBox();
+            this.deleteWordButton = new System.Windows.Forms.Button();
+            this.backButtonChangingPage = new System.Windows.Forms.Button();
             this.questPanel.SuspendLayout();
             this.startPage.SuspendLayout();
             this.questPage.SuspendLayout();
             this.addingPage.SuspendLayout();
+            this.changingPage.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // questWord
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.questWord.AutoSize = true;
+            this.questWord.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.questWord.Location = new System.Drawing.Point(252, 128);
+            this.questWord.Name = "questWord";
+            this.questWord.Size = new System.Drawing.Size(149, 55);
+            this.questWord.TabIndex = 3;
+            this.questWord.Text = "Word";
+            // 
+            // questTextBox
+            // 
+            this.questTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(252, 128);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 55);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Word";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(221, 210);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 26);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.questTextBox.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.questTextBox.Location = new System.Drawing.Point(221, 210);
+            this.questTextBox.Multiline = true;
+            this.questTextBox.Name = "questTextBox";
+            this.questTextBox.Size = new System.Drawing.Size(210, 26);
+            this.questTextBox.TabIndex = 4;
+            this.questTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nextButton
             // 
@@ -97,6 +105,7 @@
             this.nextButton.TabIndex = 5;
             this.nextButton.Text = "ДАЛЕЕ";
             this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // questPanel
             // 
@@ -106,6 +115,7 @@
             this.questPanel.Controls.Add(this.startPage);
             this.questPanel.Controls.Add(this.questPage);
             this.questPanel.Controls.Add(this.addingPage);
+            this.questPanel.Controls.Add(this.changingPage);
             this.questPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.questPanel.Location = new System.Drawing.Point(-8, -29);
             this.questPanel.Multiline = true;
@@ -116,6 +126,7 @@
             // 
             // startPage
             // 
+            this.startPage.Controls.Add(this.changeButton);
             this.startPage.Controls.Add(this.deleteList);
             this.startPage.Controls.Add(this.addList);
             this.startPage.Controls.Add(this.listCollectionsControl);
@@ -169,8 +180,8 @@
             // 
             // questPage
             // 
-            this.questPage.Controls.Add(this.label1);
-            this.questPage.Controls.Add(this.textBox1);
+            this.questPage.Controls.Add(this.questWord);
+            this.questPage.Controls.Add(this.questTextBox);
             this.questPage.Controls.Add(this.nextButton);
             this.questPage.Location = new System.Drawing.Point(4, 27);
             this.questPage.Name = "questPage";
@@ -198,6 +209,16 @@
             this.addingPage.TabIndex = 3;
             this.addingPage.Text = "tabPage1";
             this.addingPage.UseVisualStyleBackColor = true;
+            // 
+            // backToStartPageButton
+            // 
+            this.backToStartPageButton.Location = new System.Drawing.Point(286, 251);
+            this.backToStartPageButton.Name = "backToStartPageButton";
+            this.backToStartPageButton.Size = new System.Drawing.Size(75, 23);
+            this.backToStartPageButton.TabIndex = 9;
+            this.backToStartPageButton.Text = "button3";
+            this.backToStartPageButton.UseVisualStyleBackColor = true;
+            this.backToStartPageButton.Click += new System.EventHandler(this.button3_Click);
             // 
             // addWordButton
             // 
@@ -276,15 +297,103 @@
             this.wordListBox.Size = new System.Drawing.Size(175, 256);
             this.wordListBox.TabIndex = 0;
             // 
-            // backToStartPageButton
+            // changeButton
             // 
-            this.backToStartPageButton.Location = new System.Drawing.Point(286, 251);
-            this.backToStartPageButton.Name = "backToStartPageButton";
-            this.backToStartPageButton.Size = new System.Drawing.Size(75, 23);
-            this.backToStartPageButton.TabIndex = 9;
-            this.backToStartPageButton.Text = "button3";
-            this.backToStartPageButton.UseVisualStyleBackColor = true;
-            this.backToStartPageButton.Click += new System.EventHandler(this.button3_Click);
+            this.changeButton.Location = new System.Drawing.Point(289, 286);
+            this.changeButton.Name = "changeButton";
+            this.changeButton.Size = new System.Drawing.Size(75, 23);
+            this.changeButton.TabIndex = 4;
+            this.changeButton.Text = "изменить";
+            this.changeButton.UseVisualStyleBackColor = true;
+            this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
+            // 
+            // changingPage
+            // 
+            this.changingPage.Controls.Add(this.backButtonChangingPage);
+            this.changingPage.Controls.Add(this.deleteWordButton);
+            this.changingPage.Controls.Add(this.addWordChangedButton);
+            this.changingPage.Controls.Add(this.label1);
+            this.changingPage.Controls.Add(this.addedRusWordChanged);
+            this.changingPage.Controls.Add(this.label5);
+            this.changingPage.Controls.Add(this.addedEngWordChanged);
+            this.changingPage.Controls.Add(this.changingWordListBox);
+            this.changingPage.Location = new System.Drawing.Point(4, 27);
+            this.changingPage.Name = "changingPage";
+            this.changingPage.Size = new System.Drawing.Size(647, 443);
+            this.changingPage.TabIndex = 4;
+            this.changingPage.Text = "changingPage";
+            this.changingPage.UseVisualStyleBackColor = true;
+            // 
+            // changingWordListBox
+            // 
+            this.changingWordListBox.FormattingEnabled = true;
+            this.changingWordListBox.ItemHeight = 18;
+            this.changingWordListBox.Location = new System.Drawing.Point(16, 14);
+            this.changingWordListBox.Name = "changingWordListBox";
+            this.changingWordListBox.Size = new System.Drawing.Size(181, 310);
+            this.changingWordListBox.TabIndex = 0;
+            // 
+            // addWordChangedButton
+            // 
+            this.addWordChangedButton.Location = new System.Drawing.Point(228, 98);
+            this.addWordChangedButton.Name = "addWordChangedButton";
+            this.addWordChangedButton.Size = new System.Drawing.Size(139, 29);
+            this.addWordChangedButton.TabIndex = 13;
+            this.addWordChangedButton.Text = "Добавить Слово";
+            this.addWordChangedButton.UseVisualStyleBackColor = true;
+            this.addWordChangedButton.Click += new System.EventHandler(this.addWordChangedButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(391, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 18);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Слово на англецком";
+            // 
+            // addedRusWordChanged
+            // 
+            this.addedRusWordChanged.Location = new System.Drawing.Point(228, 25);
+            this.addedRusWordChanged.Name = "addedRusWordChanged";
+            this.addedRusWordChanged.Size = new System.Drawing.Size(133, 24);
+            this.addedRusWordChanged.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(391, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 18);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Слово на русском";
+            // 
+            // addedEngWordChanged
+            // 
+            this.addedEngWordChanged.Location = new System.Drawing.Point(228, 52);
+            this.addedEngWordChanged.Name = "addedEngWordChanged";
+            this.addedEngWordChanged.Size = new System.Drawing.Size(133, 24);
+            this.addedEngWordChanged.TabIndex = 9;
+            // 
+            // deleteWordButton
+            // 
+            this.deleteWordButton.Location = new System.Drawing.Point(228, 134);
+            this.deleteWordButton.Name = "deleteWordButton";
+            this.deleteWordButton.Size = new System.Drawing.Size(139, 26);
+            this.deleteWordButton.TabIndex = 14;
+            this.deleteWordButton.Text = "Удалить слово";
+            this.deleteWordButton.UseVisualStyleBackColor = true;
+            this.deleteWordButton.Click += new System.EventHandler(this.deleteWordButton_Click);
+            // 
+            // backButtonChangingPage
+            // 
+            this.backButtonChangingPage.Location = new System.Drawing.Point(16, 340);
+            this.backButtonChangingPage.Name = "backButtonChangingPage";
+            this.backButtonChangingPage.Size = new System.Drawing.Size(75, 23);
+            this.backButtonChangingPage.TabIndex = 15;
+            this.backButtonChangingPage.Text = "Назад";
+            this.backButtonChangingPage.UseVisualStyleBackColor = true;
+            this.backButtonChangingPage.Click += new System.EventHandler(this.backButtonChangingPage_Click);
             // 
             // Form1
             // 
@@ -304,13 +413,15 @@
             this.questPage.PerformLayout();
             this.addingPage.ResumeLayout(false);
             this.addingPage.PerformLayout();
+            this.changingPage.ResumeLayout(false);
+            this.changingPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label questWord;
+        private System.Windows.Forms.TextBox questTextBox;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.TabControl questPanel;
         private System.Windows.Forms.TabPage questPage;
@@ -330,6 +441,16 @@
         private System.Windows.Forms.TextBox addedEngWord;
         private System.Windows.Forms.Button addWordButton;
         private System.Windows.Forms.Button backToStartPageButton;
+        private System.Windows.Forms.Button changeButton;
+        private System.Windows.Forms.TabPage changingPage;
+        private System.Windows.Forms.ListBox changingWordListBox;
+        private System.Windows.Forms.Button deleteWordButton;
+        private System.Windows.Forms.Button addWordChangedButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox addedRusWordChanged;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox addedEngWordChanged;
+        private System.Windows.Forms.Button backButtonChangingPage;
     }
 }
 
