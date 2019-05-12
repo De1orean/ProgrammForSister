@@ -18,6 +18,8 @@ namespace WindowsFormsApp1
     
     public partial class Form1 : Form
     {
+        private static int AccuracyCounter = 0;
+        private static int ListLenghtValue = 0;
         private void listBoxUpdate()
         {
             listCollectionsControl.Items.Clear();
@@ -54,6 +56,7 @@ namespace WindowsFormsApp1
                 questPanel.SelectedIndex = 1;
                 selectedListIndex = listCollectionsControl.SelectedIndex;
                 questBoxUppdatePosition();
+                ListLenghtValue = listCollection.Collection[listCollectionsControl.SelectedIndex].russWords[indexOfWordInCollection].Count();
             }
         }
 
@@ -133,18 +136,32 @@ namespace WindowsFormsApp1
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            
-            if (questTextBox.Text.ToUpper() == listCollection.Collection[selectedListIndex].engWords[indexOfWordInCollection].ToUpper())
+            if (listCollection.Collection[selectedListIndex].engWords[indexOfWordInCollection] == questTextBox.Text)
             {
-                if (indexOfWordInCollection+1 == listCollection.Collection[selectedListIndex].engWords.Count-1)
-                {
-                    nextButton.Text = "ЗАКОНЧИТЬ";
-                }
+                AccuracyCounter++;
+            }
+
+            if (indexOfWordInCollection < ListLenghtValue-2)
+            {
                 indexOfWordInCollection++;
                 questWord.Text = listCollection.Collection[selectedListIndex].russWords[indexOfWordInCollection];
                 questTextBox.Clear();
                 questBoxUppdatePosition();
             }
+            else
+            {
+                questPanel.SelectedIndex = 4;
+                indexOfWordInCollection = 0;
+                ResoultLabel.Text = (ListLenghtValue-1).ToString()+" "+AccuracyCounter.ToString();
+                if (ListLenghtValue-1 / AccuracyCounter == 1)
+                    ResoultLabel.Text = "100%";
+                else
+                {
+                    ResoultLabel.Text = (100 / ((ListLenghtValue - 1) / AccuracyCounter)).ToString()+"%";
+                }
+
+            }
+
         }
 
         private void changeButton_Click(object sender, EventArgs e)
@@ -189,6 +206,13 @@ namespace WindowsFormsApp1
         private void backButtonChangingPage_Click(object sender, EventArgs e)
         {
             changingWordListBox.Items.Clear();
+            questPanel.SelectedIndex = 0;
+        }
+
+        private void GoToStart_Click(object sender, EventArgs e)
+        {
+            AccuracyCounter = 0;
+            ListLenghtValue = 0;
             questPanel.SelectedIndex = 0;
         }
     }

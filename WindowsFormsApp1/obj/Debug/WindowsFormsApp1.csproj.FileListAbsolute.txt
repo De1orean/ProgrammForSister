@@ -18,3 +18,13 @@ C:\Users\Andrew Magutskii\Projects\ProgrammForSister\WindowsFormsApp1\obj\Debug\
 C:\Users\Andrew Magutskii\Projects\ProgrammForSister\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\Andrew Magutskii\Projects\ProgrammForSister\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Andrew Magutskii\Projects\ProgrammForSister\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Projects\ProgrammForSister-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
